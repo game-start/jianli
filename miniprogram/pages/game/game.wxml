@@ -1,0 +1,18 @@
+<!--miniprogram/pages/game/game.wxml-->
+<image class='background' src="../../resource/image/background_02.jpg" mode="aspectFill"></image>
+<view wx:for="{{game}}">
+    <!-- <video src="{{item.video}}" class="video"></video> -->
+    <view hover-class="hover" hover-stay-time="100">
+    <image src="{{item.image}}" class="image{{index}}" bindtap="copyText" data-text="{{item.url}}"></image>
+    </view>
+    <view class="text" hover-class="hover" hover-stay-time="100"><view bindtap="copyText" data-text="{{item.url}}">点击获取{{item.name}}在线预览地址</view></view>
+</view>
+<view class="self">
+    <view hover-class="hover" hover-stay-time="100">
+    <image src="../../resource/image/github.png" class="image" data-text="https://github.com/game-start" bindtap="copyText"></image>
+    </view>
+    <view hover-class="hover" hover-stay-time="100">
+    <image src="../../resource/image/gitee.jpg" class="image" data-text="https://gitee.com/guo_yuandong" bindtap="copyText"></image>
+    </view>
+</view>
+

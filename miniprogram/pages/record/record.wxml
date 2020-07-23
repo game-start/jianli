@@ -1,0 +1,17 @@
+<!--miniprogram/pages/record/record.wxml-->
+<!-- <view class="container" enable-flex="true">
+    <view wx:for="{{userInfoList}}" class="item">
+    <view><image src="{{item.avatarUrl}}" class="userinfo-avatar"></image></view>
+    <view>{{item.nickName}}</view>
+    </view>
+</view> -->
+<image class='background' src="../../resource/image/background_03.jpg" mode="aspectFill"></image>
+<view class="container">
+    <view wx:for="{{userInfoList}}" class="item">
+    <image src="{{item.avatarUrl}}" class="userinfo-avatar"></image>
+    <text class="text">{{item.nickName}}</text>
+    </view>
+</view>
+<view class='placeholder-view'></view>
+<button class="button" id="{{buttonText?'show':'hide'}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">{{buttonText}}</button>
+

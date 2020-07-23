@@ -1,0 +1,13 @@
+<!--pages/info/info.wxml-->
+<image class='background' src="../../resource/image/background_01.jpg" mode="aspectFill"></image>
+<block class="container" wx:for="{{list}}">
+    <view class="parent" id="{{index}}" bindtap="showDetails" hover-class="hover">{{item.title}}</view>
+    <view wx:for="{{item.info}}" wx:for-item="itemName" class="son" id="{{item.showDetails?'show':'hide'}}">
+        {{index}} : {{itemName}}
+    </view>
+</block>
+<view class='placeholder-view'></view>
+<view class="self">
+    <image src="../../resource/image/wx.png" class="image" data-index="0" bindtap="imageClickEvent"></image>
+    <image src="../../resource/image/qq.png" class="image" data-index="1" bindtap="imageClickEvent"></image>
+</view>

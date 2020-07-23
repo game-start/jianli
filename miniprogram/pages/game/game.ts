@@ -1,0 +1,33 @@
+Page({
+    data:{
+      game:[
+        {
+          name:"捕鱼游戏",
+          url:"https://guo_yuandong.gitee.io/fishgame/web-mobile",
+          image:"../../resource/image/fish.jpg"
+        },
+        {
+          name:"单机五子棋",
+          url:"https://guo_yuandong.gitee.io/fishgame/gobang-mobile/",
+          image:"../../resource/image/gobang.png"
+        }
+      ],
+    },
+    copyText(e:any){
+      console.log(e);
+        wx.setClipboardData({
+            data:e.currentTarget.dataset.text,
+            success:()=>{
+              wx.showToast({
+                icon:"none",
+                title:"链接已经复制到粘贴板，请到浏览器打开"
+              })
+            }
+        })
+    },
+    onLoad(){
+      wx.showShareMenu({
+        withShareTicket: true,
+      })
+    }
+})

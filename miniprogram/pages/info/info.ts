@@ -1,0 +1,75 @@
+Page({
+  data:{
+    list:[
+        {
+          title:"基本信息",
+          info:{
+            "姓名":"郭远东",
+            "年龄":23,
+            "求职意向":"初级cocoscreator开发",
+            "联系电话":"17371429211",
+            "邮箱":"303726001@qq.com",
+            "住址所在地":"武汉",
+            "毕业学校":"武汉科技大学(本科)",
+            "所学专业":"软件工程"
+          },
+          showDetails:false
+        },
+        {
+          title:"掌握技能",
+          info:{
+             "1":"能够熟练使用js和ts编写游戏逻辑",
+             "2":"熟悉cocoscreator的各种api以及ui的调整",
+             "3":"能够使用chrome开发者工具断点排查bug以及性能调优",
+             "4":"熟悉网络接口（http,websoket),可以跟服务端对接,也知道怎么抓包改包",
+             "5":"了解git工作流",
+             "6":"了解一些web开发相关知识"
+          },
+          showDetails:false
+        },
+        {
+          title:"个人介绍",
+          info:{
+            "简介":"考公务员失败,放弃了。没工作经验,可以接受实习工资,接受加班。希望能得到一个工作和学习的机会。"
+          }
+        }
+    ],
+  },
+  onLoad(){
+    wx.showShareMenu({
+      withShareTicket: true,
+    })
+  },
+  showDetails(e:any){
+      console.log(e);
+      let id = e.currentTarget.id;
+      let key = `list[${id}].showDetails`
+      if(!this.data.list[id].showDetails){
+        this.setData({
+          [key]:true
+        },()=>{
+          console.log(this.data.list);
+        });
+      }else{
+        this.setData({
+          [key]:false
+        },()=>{
+          console.log(this.data.list);
+        })
+      };
+  },
+  imageClickEvent(e:any){
+      console.log(e);
+      if(e.currentTarget.dataset.index === "0"){
+          wx.previewImage({
+              current:"https://7975-yun-ihek2-1302692932.tcb.qcloud.la/WX.jpg?sign=382f3aaa6e2bbbbfd177c2f45de12cd5&t=1595429345",
+              urls:["https://7975-yun-ihek2-1302692932.tcb.qcloud.la/WX.jpg?sign=382f3aaa6e2bbbbfd177c2f45de12cd5&t=1595429345","https://7975-yun-ihek2-1302692932.tcb.qcloud.la/QQ.jpg?sign=8e529f1762eccb7bbea42f677484c4fa&t=1595429389"]
+          });
+      }else if(e.currentTarget.dataset.index === "1"){
+        wx.previewImage({
+          current:"https://7975-yun-ihek2-1302692932.tcb.qcloud.la/QQ.jpg?sign=8e529f1762eccb7bbea42f677484c4fa&t=1595429389",
+          urls:["https://7975-yun-ihek2-1302692932.tcb.qcloud.la/WX.jpg?sign=382f3aaa6e2bbbbfd177c2f45de12cd5&t=1595429345","https://7975-yun-ihek2-1302692932.tcb.qcloud.la/QQ.jpg?sign=8e529f1762eccb7bbea42f677484c4fa&t=1595429389"]
+      });
+      }
+  }
+})

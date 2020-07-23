@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/info/info",
+    "pages/game/game",
+    "pages/record/record"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFF00",
+    "navigationBarTitleText": "郭远东的简历",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/info/info",
+        "text": "基本信息",
+        "iconPath": "./resource/image/resume.png",
+        "selectedIconPath": "./resource/image/resume.png"
+      },
+      {
+        "pagePath": "pages/game/game",
+        "text": "个人项目",
+        "iconPath": "./resource/image/pc.png",
+        "selectedIconPath": "./resource/image/pc.png"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "谁看过我",
+        "iconPath": "./resource/image/eye.png",
+        "selectedIconPath": "./resource/image/eye.png"
+      }
+    ],
+    "backgroundColor": "#63B8FF",
+    "selectedColor":"#FF4500"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "cloud": true
+}
